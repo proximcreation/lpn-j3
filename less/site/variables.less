@@ -1,0 +1,39 @@
+// FONTS
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
+
+@base-font: 'Josefin Sans', sans-serif;
+@broken-font : 'broken_15regular';
+
+@font-size-base: 14px;
+
+// COLORS
+@danger:  lighten(desaturate(#f00, 45%), 15%);
+@warning: spin(@danger, 60);
+@success: spin(@danger, 120);
+@info:    spin(@danger, 180);
+@primary: spin(@danger, 240);
+@second: spin(@danger, 300);
+
+@default: #baa;
+@base-1 : #baa;
+@base-2 : #baa;
+@dark: #000;
+@bright: #fff;
+
+// LAYOUT
+@grid: 12;
+@btn-padding: 0.5em;
+@form-item-height: 2em;
+
+@clickable-bg-color: @base-1;
+@clickable-txt-color: @bright;
+
+@select-bg-color: @clickable-bg-color;
+@select-txt-color: @clickable-txt-color;
+@select-min-width: 80px;
+@select-arrow-content: "▼";
+@select-option-padding-h : 0.5em;
+@select-option-padding-v : 0.5em;
+@select-option-bg-color: @bright;
+@select-option-txt-color: @dark;
+@checkbox-offset-left: 0.5em;

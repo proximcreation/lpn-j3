@@ -1,0 +1,10 @@
+<ul>
+   <li ng-repeat="item in menu">
+      <a ng-href="{{item.flink}}" title="{{item.title}}">{{item.title}}</a>
+      <ul ng-if="item.subLevels.length > 0">
+         <li ng-repeat="subitem in item.subLevels">
+            <a ng-href="{{subitem.flink}}" title="{{subitem.title}}">{{subitem.title}}</a>
+         </li>
+      </ul>
+   </li>
+</ul>
