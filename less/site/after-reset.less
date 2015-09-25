@@ -237,6 +237,13 @@ ul{
 		}
 	}
 }
+nav ul{
+	padding: 0!important;
+	list-style-type: none!important;
+	a{
+		text-decoration: none;
+	}
+}
 ol{
 	list-style-type: decimal;
 	padding-left: 1em;
@@ -421,10 +428,9 @@ input{
 	position: absolute;
 	top: @v;
 	left: @h;
+	bottom: auto;
+	right: auto;
 	.transform(translate(-@h, -@v));
-}
-.centered-hv{
-	.centered(50%, 50%);
 }
 .clear-abs{
 	top: auto;
@@ -433,33 +439,52 @@ input{
 	bottom: auto;
 	.transform(none);
 }
-.abs-tr{
+.absolute(@t, @r, @b, @l){
 	position: absolute;
-	top: 0;
-	left: auto;
-	right: 0;
-	bottom: auto;
+	top: @t;
+	left: @l;
+	right: @r;
+	bottom: @b;
+}
+.fixed(@t, @r, @b, @l){
+	position: fixed;
+	top: @t;
+	left: @l;
+	right: @r;
+	bottom: @b;
+}
+.centered-hv{
+	.centered(50%, 50%);
+}
+.centered-h{
+	.centered(0, 50%);
+}
+.centered-h{
+	.centered(50%, 0);
+}
+.abs-tr{
+	.absolute(0, 0, auto, auto);
 }
 .abs-tl{
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: auto;
-	bottom: auto;
+	.absolute(0, auto, auto, 0);
 }
 .abs-br{
-	position: absolute;
-	top: autop;
-	left: auto;
-	right: 0;
-	bottom: 0;
+	.absolute(auto, 0, 0, auto);
 }
 .abs-bl{
-	position: absolute;
-	top: auto;
-	left: 0;
-	right: auto;
-	bottom: 0;
+	.absolute(auto, auto, 0, 0);
+}
+.fix-tr{
+	.fixed(0, 0, auto, auto);
+}
+.fix-tl{
+	.fixed(0, auto, auto, 0);
+}
+.fix-br{
+	.fixed(auto, 0, 0, auto);
+}
+.fix-bl{
+	.fixed(auto, auto, 0, 0);
 }
 
 

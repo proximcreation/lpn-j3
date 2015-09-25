@@ -1,2 +1,105 @@
 @import "site/reset-min.less";
 @import "site/after-reset.less";
+
+::-webkit-scrollbar {
+	width: 5px;
+}
+::-webkit-scrollbar-track {
+	background: @base-1;
+}
+::-webkit-scrollbar-thumb {
+   background: @base-2;
+}
+::-webkit-scrollbar-thumb:window-inactive {
+	background: @base-1;
+}
+.shadow{
+	.box-shadow(2.5px 2.5px 15px 7.5px fadeOut(@dark , 75%));
+}
+@s:15px;
+@b: 75px;
+
+html{
+   font-size: 14pt;
+   font-family: @base-font;
+   background-color: #eee;
+   height: 100%;
+}
+body{
+   .row;
+   padding: @s @b+@s;
+   background-color: @bright;
+}
+nav{
+   .fix-tl;
+   .shadow;
+   background-color: @bright;
+	z-index: 20;
+   font-size: .9rem;
+   &.visible{
+      overflow-y: auto;
+      width: 25%;
+      min-width: 320px;
+      height: 100%;
+      .menu-toggler{
+         float: right;
+      }
+      > ul{
+         margin: @b 0;
+         border-bottom: 1px solid @base-2;
+         li{
+            a, a:visited{
+               color: darken(@base-2, 10%);
+               padding: @s/2 @s;
+               display: block;
+               border-top: 1px solid @base-2;
+               &:hover{
+                  background-color: @base-1;
+                  color: darken(@base-2, 20%);
+               }
+            }
+            ul a{
+               padding-left: @s*2;
+            }
+         }
+      }
+   }
+   .menu-toggler{
+      width: @b;
+      height: @b;
+      display: block;
+      color: @base-2!important;
+      &:hover{
+         background-color: @base-1;
+      }
+   }
+
+}
+
+.wrapper{
+   h1.page-title{
+      font-size: 3.5rem;
+      text-align: right;
+      color: #fff;
+      text-transform: uppercase;
+      font-family: @base-big;
+   }
+   article{
+      background-color: #fff;
+      h1{
+         a, a:visited{
+            display: block;
+            background-color: @base-2;
+            padding: @s @s*2;
+            color: @bright;
+            text-decoration: none;
+            &:hover{
+               color: lighten(@bright, 10%);
+            }
+         }
+      }
+      >div{
+         padding: @b;
+      }
+   }
+}

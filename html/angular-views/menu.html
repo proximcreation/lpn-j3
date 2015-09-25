@@ -1,4 +1,5 @@
-<ul>
+<a class="menu-toggler relative" href="" ng-click="menu.visible = !menu.visible"><i class="fa fa-lg centered-hv" ng-class="{'fa-bars':!menu.visible, 'fa-remove':menu.visible}"></i></a>
+<ul ng-if="menu.visible">
    <li ng-repeat="item in menu">
       <a ng-href="{{item.flink}}" title="{{item.title}}">{{item.title}}</a>
       <ul ng-if="item.subLevels.length > 0">
