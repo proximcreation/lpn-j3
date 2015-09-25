@@ -12,8 +12,9 @@ It’s just a first test af template for using AngularJS. It’s far form being 
  - display single article page
 At the moment all the rest works as Joomla! normal elements (use the positions)
 
-### STYLE → There is no style at the moment !
+### STYLE → REALLY BASIC
 It just generates raw and simple html structured page, it’s up to you ! (put your styles in site.less)
+I’ve put some gryscales colors + the main menu hidding to the left of the screen.
 
 ### Embeded things
  - js
