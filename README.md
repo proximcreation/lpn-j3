@@ -33,7 +33,7 @@ It just generates raw and simple html structured page, it’s up to you ! (put y
 
 ## Install
 as always in Joomla! :
- - Manage extensions > install
+ - Manage extensions > install from file (lpn-j3.zip)
  - Make "lpn-j3" your default template
  
 ## ATTENTION
