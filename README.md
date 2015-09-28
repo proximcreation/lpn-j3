@@ -7,6 +7,7 @@ It’s just a first test af template for using AngularJS. It’s far form being 
 ## Featured
 ### Contents displayed
  - display a unique main-menu, put your main-menu in the "data-loader" position
+ - display a search module, put your search module in the "data-loader" position
  - display featured page
  - display category as a blog page
  - display single article page
