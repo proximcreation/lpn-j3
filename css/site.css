@@ -2823,11 +2823,13 @@ nav .search-toggler:hover,
 .wrapper article {
   background-color: #fff;
 }
+.wrapper article h1 {
+  background-color: #aab;
+  padding: 15px 30px;
+}
 .wrapper article h1 a,
 .wrapper article h1 a:visited {
   display: block;
-  background-color: #aab;
-  padding: 15px 30px;
   color: #eee;
   text-decoration: none;
 }
@@ -2835,6 +2837,31 @@ nav .search-toggler:hover,
 .wrapper article h1 a:visited:hover {
   color: #ffffff;
 }
+.wrapper article h2 {
+  background-color: #dde;
+  padding: 15px 30px;
+}
 .wrapper article >div {
   padding: 75px;
+}
+.wrapper.search ul.results {
+  padding: 0;
+  list-style-type: none;
+}
+.wrapper.search ul.results li {
+  border-bottom: solid 1px #dde;
+  padding: 15px 0;
+}
+.wrapper.search ul.results li a {
+  text-decoration: none;
+  color: #333;
+}
+.wrapper.search ul.results li a:hover {
+  color: #aab;
+}
+.wrapper.search ul.results li:last-child {
+  border-bottom: none;
+}
+.wrapper.search .highlight {
+  background-color: #dde;
 }

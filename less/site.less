@@ -124,10 +124,10 @@ nav, .searchForm{
    article{
       background-color: #fff;
       h1{
+         background-color: @base-2;
+         padding: @s @s*2;
          a, a:visited{
             display: block;
-            background-color: @base-2;
-            padding: @s @s*2;
             color: @bright;
             text-decoration: none;
             &:hover{
@@ -135,8 +135,35 @@ nav, .searchForm{
             }
          }
       }
+		h2{
+			background-color: @base-1;
+         padding: @s @s*2;
+		}
       >div{
          padding: @b;
       }
    }
+	&.search{
+		ul.results{
+			padding: 0;
+			list-style-type: none;
+			li{
+				a{
+					text-decoration: none;
+					color: @dark;
+					&:hover{
+						color: @base-2;
+					}
+				}
+				border-bottom: solid 1px @base-1;
+				padding: @s 0;
+				&:last-child{
+					border-bottom: none;
+				}
+			}
+		}
+		.highlight{
+			background-color: @base-1;
+		}
+	}
 }

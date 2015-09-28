@@ -99,6 +99,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 				<div class="wrapper featured" ng-if="featured!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/featured.html'"></div>
 				<div class="wrapper category" ng-if="category!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/category.html'"></div>
 				<div class="wrapper article" ng-if="article!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/article.html'"></div>
+				<div class="wrapper search" ng-if="searchForm.results!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/search.html'"></div>
 			</main>
 			<div class="right">
 				<jdoc:include type="modules" name="position-2" style="none" />
@@ -111,9 +112,11 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 
 		<!-- DATA LOAD -->
 		<!-- component is a data loader in this template -->
-		<jdoc:include type="component" />
 		<!-- position where put all the modules that load data instead of page parts (for example the menus) -->
 		<jdoc:include type="modules" name="data-loader" style="none" />
+		<jdoc:include type="component" />
+
+
 		<script type="text/javascript">
 			var tmplPath = '<?php echo $tmpl; ?>';
 		</script>

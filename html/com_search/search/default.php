@@ -1,16 +1,13 @@
 <?php
 /**
  * @package     Joomla.Site
- * @subpackage  com_content
+ * @subpackage  com_search
  *
  * @copyright   Copyright (C) 2005 - 2015 Open Source Matters, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
 
 defined('_JEXEC') or die;
-
-JHtml::addIncludePath(JPATH_COMPONENT . '/helpers');
-
 if(!function_exists('getJsonData')){
    function getJsonData($o){
      $var = get_object_vars($o);
@@ -23,15 +20,18 @@ if(!function_exists('getJsonData')){
    }
 }
 
-$category = getJsonData($this->category);
-$intro_items = json_encode($this->intro_items);
-$lead_items = json_encode($this->lead_items);
+$results = json_encode($this->results);
+if ($this->error) {
+   $errors =  json_encode($this->escape($this->errors));
+}
 // $pagination = getJsonData($this->pagination);
 ?>
+
 <script type="text/javascript">
-var category = {
-	infos : <?php echo($category); ?>,
-	introItems : <?php echo($intro_items); ?>,
-	leadItems : <?php echo($lead_items); ?>
-};
+	searchForm.results = <?php echo($results); ?>;
+   <?php if ($this->error) {?>
+   searchForm.errors = <?php echo($errors); ?>;
+   <?php }?>
+   searchForm.origKeyword = '<?php echo $this->escape($this->origkeyword); ?>';
+	searchForm.total = <?php echo $this->escape($this->total); ?>;
 </script>
