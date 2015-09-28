@@ -12,7 +12,30 @@ It’s just a first test af template for using AngularJS. It’s far form being 
  - display featured page
  - display category as a blog page
  - display single article page
+ - Manage "mod_custom" module as a data loader.
+ 
 At the moment all the rest works as Joomla! normal elements (use the positions)
+
+### MOD_CUSTOM usage
+Create a mod_custom module in the potition "data-loader". Name it "json_config".
+Disable the editor and enter some javascript data.
+*example :*
+```
+{"banner":"someurl", "logo":"someurl"}
+```
+This will generate :
+```
+<script>var json_config = {"banner":"someurl", "logo":"someurl"};</script>
+```
+Note that all the html tags will be removed. It’s cool to avoid editor auto correction, but in the other hand you can’t put some html in yout data set. (use markdown if needed :)
+
+This exmaple allow the banner display of your site. But you can use th module to add everything you need.
+
+If you want to add other custom modules to manage when the data are loaded for example, you create custom modules, the title is the variable name, the content is the value.
+Then you must add to your MainCtrl (js/app/controllers.js) something like :
+```
+if(typeof my_data_set !== 'undefined'){ $scope.whatever = my_data_set;}
+```
 
 ### /!\ STYLE → REALLY BASIC
 It just generates raw and simple html structured page, it’s up to you ! (put your styles in site.less)
