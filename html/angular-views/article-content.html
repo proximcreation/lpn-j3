@@ -1,4 +1,7 @@
 <h1 ng-if="article === undefined"><a ng-href="./{{item.category_alias}}/{{item.slug}}">{{item.title}}</a></h1>
-<div ng-bind-html="item.introtext"></div>
-<a href="" ng-click="item.full = !item.full" ng-if="article === undefined">{{!item.full?'Lire la suite...':'Réduire'}}</a>
-<div ng-bind-html="item.fulltext" ng-if="item.full || article !== undefined"></div>
+
+<div ng-if="article === undefined" ng-bind-html="item.introtext"></div>
+<a href="" ng-click="item.full = !item.full" ng-if="article === undefined && item.fulltext!=''">{{!item.full?'Lire la suite...':'Réduire'}}</a>
+<div ng-bind-html="item.fulltext" ng-if="item.full && article === undefined"></div>
+
+<div ng-if="article !== undefined" ng-bind-html="item.introtext+item.fulltext"></div>

@@ -28,9 +28,40 @@ html{
 }
 body{
    .row;
-   padding: @s @b+@s;
    background-color: @bright;
 }
+
+header{
+	height: 400px;
+	overflow: hidden;
+	width: 100%;
+	background-position: top center;
+	background-attachment: absolute;
+	background-repeat: no-repeat;
+	.relative;
+	.logo{
+		.centered-hv;
+		background-color: fadeOut(#fff, 25%);
+		padding: @s*2;
+		max-height: 80%;
+		width: 25%;
+		min-width: 300px;
+		img{
+			width: 100%;
+		}
+	}
+}
+@media screen and (min-width:1120px){
+	header{
+		background-size: 100% auto;
+	}
+}
+@media screen and (max-width:1119px){
+	header{
+		background-size: auto 100%;
+	}
+}
+
 .nav-stuffs{
 	.fix-tl;
    .shadow;
@@ -113,6 +144,11 @@ nav, .searchForm{
 		}
 	}
 }
+
+.content-wrapper{
+	.row;
+	padding: @s @b+@s;
+}
 .wrapper{
    h1.page-title{
       font-size: 3.5rem;
@@ -123,24 +159,27 @@ nav, .searchForm{
    }
    article{
       background-color: #fff;
-      h1{
-         background-color: @base-2;
-         padding: @s @s*2;
-         a, a:visited{
-            display: block;
-            color: @bright;
-            text-decoration: none;
-            &:hover{
-               color: lighten(@bright, 10%);
-            }
-         }
-      }
+	   h1{
+	      background-color: @base-2;
+	      padding: @s @s*2;
+	      a, a:visited{
+	         display: block;
+	         color: @bright;
+	         text-decoration: none;
+	         &:hover{
+	            color: lighten(@bright, 10%);
+	         }
+	      }
+	   }
 		h2{
+			font-size: 1.3em;
 			background-color: @base-1;
-         padding: @s @s*2;
+	      padding: @s/2 @s*2;
+			margin: @s*2 0;
 		}
       >div{
          padding: @b;
+			text-align: justify;
       }
    }
 	&.search{

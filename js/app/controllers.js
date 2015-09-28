@@ -8,6 +8,7 @@ app
 
 			// DATA LOAD
 			$scope.tmplPath = tmplPath;
+			if(typeof json_config !== 'undefined'){ $scope.config = json_config;}
 			if(typeof article !== 'undefined'){ $scope.article = article;}
 			if(typeof category !== 'undefined'){ $scope.category = category;}
 			if(typeof featured !== 'undefined'){ $scope.featured = featured;}

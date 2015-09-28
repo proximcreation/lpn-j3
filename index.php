@@ -73,8 +73,10 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 
 	<body class="site" ng-controller="MainCtrl">
 
-		<header>
-			<jdoc:include type="modules" name="header" style="none" />
+		<header style="background-image : url({{config.banner}})">
+			<div class="logo centered-hv">
+				<img ng-src="{{config.logo}}" alt=""/>
+			</div>
 		</header>
 		<div class="nav-stuffs">
 			<div

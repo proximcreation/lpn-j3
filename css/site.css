@@ -2698,8 +2698,47 @@ html {
 body {
   float: left;
   width: 100%;
-  padding: 15px 90px;
   background-color: #eee;
+}
+header {
+  height: 400px;
+  overflow: hidden;
+  width: 100%;
+  background-position: top center;
+  background-attachment: absolute;
+  background-repeat: no-repeat;
+  position: relative;
+}
+header .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  bottom: auto;
+  right: auto;
+  -ms-transform: scale(translate(-50%,-50%));
+  -webkit-transform: scale(translate(-50%,-50%));
+  transform: scale(translate(-50%,-50%));
+  -ms-transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+  background-color: rgba(255,255,255,0.75);
+  padding: 30px;
+  max-height: 80%;
+  width: 25%;
+  min-width: 300px;
+}
+header .logo img {
+  width: 100%;
+}
+@media screen and (min-width: 1120px) {
+  header {
+    background-size: 100% auto;
+  }
+}
+@media screen and (max-width: 1119px) {
+  header {
+    background-size: auto 100%;
+  }
 }
 .nav-stuffs {
   position: fixed;
@@ -2813,6 +2852,11 @@ nav .search-toggler:hover,
 .searchForm.visible .search-toggler:hover {
   background-color: #dde;
 }
+.content-wrapper {
+  float: left;
+  width: 100%;
+  padding: 15px 90px;
+}
 .wrapper h1.page-title {
   font-size: 3.5rem;
   text-align: right;
@@ -2838,11 +2882,14 @@ nav .search-toggler:hover,
   color: #ffffff;
 }
 .wrapper article h2 {
+  font-size: 1.3em;
   background-color: #dde;
-  padding: 15px 30px;
+  padding: 7.5px 30px;
+  margin: 30px 0;
 }
 .wrapper article >div {
   padding: 75px;
+  text-align: justify;
 }
 .wrapper.search ul.results {
   padding: 0;
