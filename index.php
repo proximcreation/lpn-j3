@@ -75,7 +75,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 
 		<header style="background-image : url({{config.banner}})">
 			<div class="logo centered-hv">
-				<img ng-src="{{config.logo}}" alt=""/>
+				<img ng-src="<?php echo $this->baseurl.'/'; ?>{{config.logo}}" alt=""/>
 			</div>
 		</header>
 		<div class="nav-stuffs">
@@ -86,7 +86,6 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 			<nav
 				ng-class="{'visible':menu.visible}"
 				ng-if="menu!==undefined"
-				ng-mouseLeave="menu.visible=false"
 				ng-include="'<?php echo $tmpl; ?>/html/angular-views/menu.html'"></nav>
 		</div>
 		<div class="content-wrapper">
@@ -102,6 +101,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 				<div class="wrapper category" ng-if="category!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/category.html'"></div>
 				<div class="wrapper article" ng-if="article!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/article.html'"></div>
 				<div class="wrapper search" ng-if="searchForm.results!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/search.html'"></div>
+				<div class="wrapper contact" ng-if="contact!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/contact.html'"></div>
 			</main>
 			<div class="right">
 				<jdoc:include type="modules" name="position-2" style="none" />

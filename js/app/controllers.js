@@ -1,7 +1,7 @@
 app
 .controller('MainCtrl',[
-	'$scope', '$window', '$http', '$location', '$timeout', '$filter',
-	function($scope, $window, $http, $location, $timeout, $filter) {
+	'$scope', '$sce', '$window', '$http', '$location', '$timeout', '$filter',
+	function($scope, $sce, $window, $http, $location, $timeout, $filter) {
 
 		var init = function(){
 			moment.locale('fr');
@@ -12,6 +12,11 @@ app
 			if(typeof article !== 'undefined'){ $scope.article = article;}
 			if(typeof category !== 'undefined'){ $scope.category = category;}
 			if(typeof featured !== 'undefined'){ $scope.featured = featured;}
+			if(typeof contact !== 'undefined'){
+				$scope.contact = contact;
+				$scope.contact.form.formActions = $sce.trustAsHtml($scope.contact.form.formActions);
+			}
+			if(typeof contacts !== 'undefined'){ $scope.contacts = contacts;}
 			if(typeof searchForm !== 'undefined'){
 				$scope.searchForm = searchForm;
 			}
@@ -19,6 +24,9 @@ app
 				$scope.menu = [];
 				for(var i=0, l=menu.length; i<l; i++){
 					var cur = menu[i];
+					if(cur.anchor_css.indexOf('quick')>=0){
+						cur.quick = true;
+					}
 					if(_.where($scope.menu, {id : cur.id}).length == 0){
 						// cur not treated
 						if(cur.parent_id === '1'){

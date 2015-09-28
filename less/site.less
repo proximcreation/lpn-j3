@@ -19,6 +19,7 @@
 }
 @s:15px;
 @b: 75px;
+@h:400px;
 
 html{
    font-size: 14pt;
@@ -32,7 +33,7 @@ body{
 }
 
 header{
-	height: 400px;
+	height: @h;
 	overflow: hidden;
 	width: 100%;
 	background-position: top center;
@@ -64,16 +65,18 @@ header{
 
 .nav-stuffs{
 	.fix-tl;
+	top: @h-@b*2;
    .shadow;
 	width: @b;
 	height: @b*2;
 }
 nav, .searchForm{
-   .fix-tl;
+   .abs-tl;
    background-color: @bright;
 	z-index: 20;
    font-size: .9rem;
    &.visible{
+		.fix-tl;
 		.shadow;
       overflow-y: auto;
       width: 25%;
@@ -112,13 +115,42 @@ nav, .searchForm{
       }
    }
 }
+nav.visible{
+	li.quick{
+		a{
+			background-color: @bright;
+			display: block;
+			width: @b;
+			height: @b;
+			&:before{
+				font-size: 2rem;
+				.fa;
+				.centered-hv;
+			}
+		}
+		&.top{
+			.fix-tl;
+			&.contact{
+				left: @b;
+			}
+		}
+		&.bottom{
+			.fix-bl;
+		}
+		&.home a:before{content: @fa-var-home;}
+		&.contact a:before{content: @fa-var-envelope;}
+		&.legal a:before{content: @fa-var-balance-scale;}
+	}
+}
 .searchForm{
 	top: @b;
 	&.visible{
+		.abs-tl;
+		top: @b;
 		.shadow;
 		height: @b;
 		overflow: visible;
-		.icon{
+		.fa{
 			line-height: @b;
 			float: left;
 			padding: 0 @s;
@@ -177,9 +209,12 @@ nav, .searchForm{
 	      padding: @s/2 @s*2;
 			margin: @s*2 0;
 		}
-      >div{
-         padding: @b;
+      >div, form{
+         padding: @s @b @b @b;
 			text-align: justify;
+			p, ul, ol{
+				margin-bottom: @s*2;
+			}
       }
    }
 	&.search{
@@ -204,5 +239,8 @@ nav, .searchForm{
 		.highlight{
 			background-color: @base-1;
 		}
+	}
+	input[type="text"], input[type="email"], textarea{
+		padding: @s;
 	}
 }

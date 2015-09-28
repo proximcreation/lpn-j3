@@ -1,0 +1,47 @@
+<h1 class="page-title">Contactez-nous</h1>
+<section>
+   <article>
+      <h1>Informations</h1>
+      <div>
+         <table>
+            <tr>
+               <th>Nom</th><td><strong>{{contact.name}}</strong></td>
+            </tr>
+            <tr>
+               <th>Adresse</th><td>{{contact.address}}<br />{{contact.postcode}} {{contact.city}}</td>
+            </tr>
+            <tr>
+               <th>Téléphone</th><td>{{contact.telephone}}</td>
+            </tr>
+
+         </table>
+      </div>
+      <h1>{{contact.name}}</h1>
+      <form class="contactbox" action="{{contact.form.action}}" method="post" class="col-12">
+         <fieldset>
+			<legend>Envoyer un e-mail. Tous les champs marqués d'un astérisque * sont obligatoires.</legend>
+			<div class="input-group row">
+				<label class="col-3" for="jform_contact_name" title="Nom">Nom</label>
+				<input class="col-9" type="text" name="jform[contact_name]" id="jform_contact_name" required />
+			</div>
+			<div class="input-group row">
+				<label class="col-3" for="jform_contact_email" title="Email">E-mail</label>
+				<input class="col-9" type="email" name="jform[contact_email]" id="jform_contact_email" required/>
+			</div>
+			<div class="input-group row">
+				<label class="col-3" for="jform_contact_emailmsg" title="Sujet">Sujet</label>
+				<input class="col-9" type="text" name="jform[contact_subject]" id="jform_contact_emailmsg" required/>
+			</div>
+			<div class="input-group row">
+				<label class="col-3" for="jform_contact_message" title="Message">Message</label>
+				<textarea class="col-9" name="jform[contact_message]" id="jform_contact_message" rows="10" required></textarea>
+			</div>
+			<div class="input-group row">
+				<input class="col-ol-3" type="checkbox" name="jform[contact_email_copy]" id="jform_contact_email_copy" value="1" />
+				<label class="col-ol-3 col-9" for="jform_contact_email_copy" title="Envoyer une copie">Envoyer une copie à votre adresse</label>
+			</div>
+			<div class="col-ol-3 form-actions" ng-bind-html="contact.form.formActions"></div>
+		</fieldset>
+      </form>
+   </article>
+</section>

@@ -8,7 +8,7 @@
                <h4>Aucun résultat pour cette requête.</h4>
             </li>
             <li ng-repeat="item in searchForm.results">
-               <h4><a ng-href="./{{item.catslug}}/{{item.slug}}">{{item.title}}</a></h4>
+               <h4><a ng-href="./{{item.href}}">{{item.title}}</a></h4>
                <p><em>({{item.section}})</em></p>
                <div ng-bind-html="item.text"></div>
             </li>

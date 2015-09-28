@@ -1,9 +1,9 @@
 <a class="menu-toggler relative" href="" ng-click="menu.visible = !menu.visible"><i class="fa fa-lg centered-hv" ng-class="{'fa-bars':!menu.visible, 'fa-remove':menu.visible}"></i></a>
 <ul ng-if="menu.visible">
-   <li ng-repeat="item in menu">
-      <a ng-href="{{item.flink}}" title="{{item.title}}">{{item.title}}</a>
+   <li ng-repeat="item in menu" class="{{item.anchor_css}}">
+      <a ng-href="{{item.flink}}" title="{{item.title}}">{{item.quick?'':item.title}}</a>
       <ul ng-if="item.subLevels.length > 0">
-         <li ng-repeat="subitem in item.subLevels">
+         <li ng-repeat="subitem in item.subLevels" class="{{item.anchor_css}}">
             <a ng-href="{{subitem.flink}}" title="{{subitem.title}}">{{subitem.title}}</a>
          </li>
       </ul>
