@@ -7,13 +7,15 @@ It’s just a first test af template for using AngularJS. It’s far form being 
 ## Featured
 ### Contents displayed
  - display a unique main-menu, put your main-menu in the "data-loader" position
+ - display a search module, put your search module in the "data-loader" position
  - display featured page
  - display category as a blog page
  - display single article page
 At the moment all the rest works as Joomla! normal elements (use the positions)
 
-### STYLE → There is no style at the moment !
+### /!\ STYLE → REALLY BASIC
 It just generates raw and simple html structured page, it’s up to you ! (put your styles in site.less)
+I’ve put some greyscales colors + the main menu hidding to the left of the screen.
 
 ### Embeded things
  - js
