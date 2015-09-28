@@ -67,11 +67,17 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 		<header>
 			<jdoc:include type="modules" name="header" style="none" />
 		</header>
-		<nav
-			ng-class="{'visible':menu.visible}"
-			ng-if="menu!==undefined"
-			ng-mouseLeave="menu.visible=false"
-			ng-include="'<?php echo $tmpl; ?>/html/angular-views/menu.html'"></nav>
+		<div class="nav-stuffs">
+			<div
+				class="search"
+				ng-class="{'visible':searchForm.visible}"
+				ng-include="'<?php echo $tmpl; ?>/html/angular-views/search-form.html'"></div>
+			<nav
+				ng-class="{'visible':menu.visible}"
+				ng-if="menu!==undefined"
+				ng-mouseLeave="menu.visible=false"
+				ng-include="'<?php echo $tmpl; ?>/html/angular-views/menu.html'"></nav>
+		</div>
 		<div class="content-wrapper">
 			<div class="navigation left">
 				<jdoc:include type="modules" name="position-1" style="none" />

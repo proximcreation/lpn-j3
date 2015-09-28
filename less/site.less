@@ -1,5 +1,6 @@
 @import "site/reset-min.less";
 @import "site/after-reset.less";
+// @import "site/icon/font-awesome.less";
 
 ::-webkit-scrollbar {
 	width: 5px;
@@ -30,13 +31,19 @@ body{
    padding: @s @b+@s;
    background-color: @bright;
 }
-nav{
-   .fix-tl;
+.nav-stuffs{
+	.fix-tl;
    .shadow;
+	width: @b;
+	height: @b*2;
+}
+nav, .search{
+   .fix-tl;
    background-color: @bright;
 	z-index: 20;
    font-size: .9rem;
    &.visible{
+		.shadow;
       overflow-y: auto;
       width: 25%;
       min-width: 320px;
@@ -64,7 +71,7 @@ nav{
          }
       }
    }
-   .menu-toggler{
+   .menu-toggler, .search-toggler{
       width: @b;
       height: @b;
       display: block;
@@ -73,9 +80,39 @@ nav{
          background-color: @base-1;
       }
    }
-
 }
-
+.search{
+	top: @b;
+	&.visible{
+		.shadow;
+		height: @b;
+		overflow: visible;
+		.icon{
+			line-height: @b;
+			float: left;
+			padding: 0 @s;
+			width: 10%;
+			color: @base-2!important;
+		}
+		input{
+			float: left;
+			padding: @s;
+			height: @b;
+			min-width: 90%;
+			border: none;
+			background-color: transparent;
+		}
+		.search-toggler{
+			float: right;
+			.abs-tr;
+			width: @b/2;
+			background-color: @bright;
+			&:hover{
+	         background-color: @base-1;
+	      }
+		}
+	}
+}
 .wrapper{
    h1.page-title{
       font-size: 3.5rem;

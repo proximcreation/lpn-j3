@@ -1,0 +1,8 @@
+<a class="search-toggler relative" href="" ng-click="searchForm.visible = !searchForm.visible"><i class="fa fa-lg centered-hv" ng-class="{'fa-search':!searchForm.visible, 'fa-remove':searchForm.visible}"></i></a>
+<form class="searchbox" action="{{searchForm.action}}" method="post" ng-if="searchForm.visible">
+   <i class="icon fa fa-search"></i>
+   <input type="search" name="searchword" id="mod-search-searchword" placeholder="{{searchForm.placeholder}}" />
+   <input type="hidden" name="task" value="search" />
+   <input type="hidden" name="option" value="com_search" />
+   <input type="hidden" name="Itemid" value="{{searchForm.Itemid}}" />
+</form>

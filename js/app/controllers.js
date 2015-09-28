@@ -1,4 +1,5 @@
-app.controller('MainCtrl',[
+app
+.controller('MainCtrl',[
 	'$scope', '$window', '$http', '$location', '$timeout', '$filter',
 	function($scope, $window, $http, $location, $timeout, $filter) {
 
@@ -10,6 +11,9 @@ app.controller('MainCtrl',[
 			if(typeof article !== 'undefined'){ $scope.article = article;}
 			if(typeof category !== 'undefined'){ $scope.category = category;}
 			if(typeof featured !== 'undefined'){ $scope.featured = featured;}
+			if(typeof searchForm !== 'undefined'){
+				$scope.searchForm = searchForm;
+			}
 			if(typeof menu !== 'undefined'){
 				$scope.menu = [];
 				for(var i=0, l=menu.length; i<l; i++){
