@@ -2713,7 +2713,7 @@ body {
   height: 150px;
 }
 nav,
-.search {
+.searchForm {
   position: fixed;
   top: 0;
   left: 0;
@@ -2724,7 +2724,7 @@ nav,
   font-size: .9rem;
 }
 nav.visible,
-.search.visible {
+.searchForm.visible {
   -webkit-box-shadow: 2.5px 2.5px 15px 7.5px rgba(51,51,51,0.25);
   box-shadow: 2.5px 2.5px 15px 7.5px rgba(51,51,51,0.25);
   overflow-y: auto;
@@ -2733,18 +2733,18 @@ nav.visible,
   height: 100%;
 }
 nav.visible .menu-toggler,
-.search.visible .menu-toggler {
+.searchForm.visible .menu-toggler {
   float: right;
 }
 nav.visible > ul,
-.search.visible > ul {
+.searchForm.visible > ul {
   margin: 75px 0;
   border-bottom: 1px solid #aab;
 }
 nav.visible > ul li a,
 nav.visible > ul li a:visited,
-.search.visible > ul li a,
-.search.visible > ul li a:visited {
+.searchForm.visible > ul li a,
+.searchForm.visible > ul li a:visited {
   color: #8e8ea4;
   padding: 7.5px 15px;
   display: block;
@@ -2752,19 +2752,19 @@ nav.visible > ul li a:visited,
 }
 nav.visible > ul li a:hover,
 nav.visible > ul li a:visited:hover,
-.search.visible > ul li a:hover,
-.search.visible > ul li a:visited:hover {
+.searchForm.visible > ul li a:hover,
+.searchForm.visible > ul li a:visited:hover {
   background-color: #dde;
   color: #71718e;
 }
 nav.visible > ul li ul a,
-.search.visible > ul li ul a {
+.searchForm.visible > ul li ul a {
   padding-left: 30px;
 }
 nav .menu-toggler,
 nav .search-toggler,
-.search .menu-toggler,
-.search .search-toggler {
+.searchForm .menu-toggler,
+.searchForm .search-toggler {
   width: 75px;
   height: 75px;
   display: block;
@@ -2772,27 +2772,27 @@ nav .search-toggler,
 }
 nav .menu-toggler:hover,
 nav .search-toggler:hover,
-.search .menu-toggler:hover,
-.search .search-toggler:hover {
+.searchForm .menu-toggler:hover,
+.searchForm .search-toggler:hover {
   background-color: #dde;
 }
-.search {
+.searchForm {
   top: 75px;
 }
-.search.visible {
+.searchForm.visible {
   -webkit-box-shadow: 2.5px 2.5px 15px 7.5px rgba(51,51,51,0.25);
   box-shadow: 2.5px 2.5px 15px 7.5px rgba(51,51,51,0.25);
   height: 75px;
   overflow: visible;
 }
-.search.visible .icon {
+.searchForm.visible .icon {
   line-height: 75px;
   float: left;
   padding: 0 15px;
   width: 10%;
   color: #aab !important;
 }
-.search.visible input {
+.searchForm.visible input {
   float: left;
   padding: 15px;
   height: 75px;
@@ -2800,7 +2800,7 @@ nav .search-toggler:hover,
   border: none;
   background-color: transparent;
 }
-.search.visible .search-toggler {
+.searchForm.visible .search-toggler {
   float: right;
   position: absolute;
   top: 0;
@@ -2810,7 +2810,7 @@ nav .search-toggler:hover,
   width: 37.5px;
   background-color: #eee;
 }
-.search.visible .search-toggler:hover {
+.searchForm.visible .search-toggler:hover {
   background-color: #dde;
 }
 .wrapper h1.page-title {

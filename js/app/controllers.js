@@ -41,7 +41,7 @@ app
 				}
 			}
 
-
+			console.log('loaded!!');
 
 		};
 		init();

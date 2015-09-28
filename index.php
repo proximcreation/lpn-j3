@@ -17,11 +17,20 @@ $this->direction = $doc->direction;
 $sitename = $app->get('sitename');
 $tmpl = $this->baseurl . '/templates/' . $this->template;
 
+// STOP INCLUDING GARBAGE IN MY TEMPLATE !!!!
+foreach ($doc->_scripts as $script => $value)
+{
+    if (preg_match('/media\/jui/i', $script))
+      unset($doc->_scripts[$script]);
+}
+
 // Add Stylesheets
 require "php/lessc.inc.php";
 $less = new lessc;
 $less->checkedCompile( dirname(__FILE__) . "/less/site.less", dirname(__FILE__) . "/css/site.css");
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/site.css');
+
+
 
 ?>
 <!DOCTYPE html>
@@ -69,7 +78,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 		</header>
 		<div class="nav-stuffs">
 			<div
-				class="search"
+				class="searchForm"
 				ng-class="{'visible':searchForm.visible}"
 				ng-include="'<?php echo $tmpl; ?>/html/angular-views/search-form.html'"></div>
 			<nav
