@@ -12,10 +12,14 @@ It’s just a first test af template for using AngularJS. It’s far form being 
  - display featured page
  - display category as a blog page
  - display single article page
+ - display contact page (info and form, the form is at the moment untested)
  - Manage "mod_custom" module as a data loader.
  
 At the moment all the rest works as Joomla! normal elements (use the positions)
 
+### class in the menu item
+ - if you put the class 'quick' in your menu item, the text of the item won’t show up (ideal for icon only items)
+ 
 ### MOD_CUSTOM usage
 Create a mod_custom module in the potition "data-loader". Name it "json_config".
 Disable the editor and enter some javascript data.
