@@ -21,6 +21,7 @@
 @b: 75px;
 @h:400px;
 
+// === GENERAL ===
 html{
    font-size: 14pt;
    font-family: @base-font;
@@ -32,6 +33,7 @@ body{
    background-color: @bright;
 }
 
+// === HEADER ===
 header{
 	height: @h;
 	overflow: hidden;
@@ -63,6 +65,7 @@ header{
 	}
 }
 
+// === NAVIGATION ===
 .nav-stuffs{
 	.fix-tl;
 	top: @h-@b*2;
@@ -177,20 +180,41 @@ nav.visible{
 	}
 }
 
+// === CONTENT ===
+.readmore, .readmore:visited{
+	background-color: @base-2;
+	color: @bright;
+	padding: @s @s*2;
+	text-decoration: none;
+	&:hover{
+		background-color: @dark;
+	}
+}
 .content-wrapper{
-	.row;
+	// .row;
+	width: 100%;
+	max-width: 1400px;
+	margin: 0 auto;
 	padding: @s @b+@s;
 }
 .wrapper{
+	.inner{
+		padding: @s @b @b @b;
+		text-align: justify;
+		p, ul, ol{
+			margin-bottom: @s*2;
+		}
+	}
    h1.page-title{
       font-size: 3.5rem;
       text-align: right;
-      color: #fff;
+      color: @base-2;
       text-transform: uppercase;
       font-family: @base-big;
    }
    article{
       background-color: #fff;
+		margin-bottom: @b;
 	   h1{
 	      background-color: @base-2;
 	      padding: @s @s*2;
@@ -209,13 +233,6 @@ nav.visible{
 	      padding: @s/2 @s*2;
 			margin: @s*2 0;
 		}
-      >div, form{
-         padding: @s @b @b @b;
-			text-align: justify;
-			p, ul, ol{
-				margin-bottom: @s*2;
-			}
-      }
    }
 	&.search{
 		ul.results{
@@ -242,5 +259,22 @@ nav.visible{
 	}
 	input[type="text"], input[type="email"], textarea{
 		padding: @s;
+	}
+}
+
+// === FOOTER ===
+footer{
+	.row;
+	padding: @s @b+@s;
+	background-color: @dark;
+	color: @bright;
+	text-align: center;
+	.logo-bar{
+		img{
+			background-color: #fff;
+			padding: @s/2;
+			margin: 0 @s/2;
+			height: 100px;
+		}
 	}
 }

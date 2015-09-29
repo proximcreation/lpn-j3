@@ -2397,7 +2397,7 @@ nav ul a {
 }
 ol {
   list-style-type: decimal;
-  padding-left: 1em;
+  padding-left: 1.5em;
 }
 ol li > ol {
   list-style-type: lower-alpha;
@@ -3136,20 +3136,42 @@ nav.visible li.quick.legal a:before {
 .searchForm.visible .search-toggler:hover {
   background-color: #dde;
 }
+.readmore,
+.readmore:visited {
+  background-color: #aab;
+  color: #eee;
+  padding: 15px 30px;
+  text-decoration: none;
+}
+.readmore:hover,
+.readmore:visited:hover {
+  background-color: #333;
+}
 .content-wrapper {
-  float: left;
   width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
   padding: 15px 90px;
+}
+.wrapper .inner {
+  padding: 15px 75px 75px 75px;
+  text-align: justify;
+}
+.wrapper .inner p,
+.wrapper .inner ul,
+.wrapper .inner ol {
+  margin-bottom: 30px;
 }
 .wrapper h1.page-title {
   font-size: 3.5rem;
   text-align: right;
-  color: #fff;
+  color: #aab;
   text-transform: uppercase;
   font-family: 'Source Sans Pro', sans-serif;
 }
 .wrapper article {
   background-color: #fff;
+  margin-bottom: 75px;
 }
 .wrapper article h1 {
   background-color: #aab;
@@ -3170,19 +3192,6 @@ nav.visible li.quick.legal a:before {
   background-color: #dde;
   padding: 7.5px 30px;
   margin: 30px 0;
-}
-.wrapper article >div,
-.wrapper article form {
-  padding: 15px 75px 75px 75px;
-  text-align: justify;
-}
-.wrapper article >div p,
-.wrapper article >div ul,
-.wrapper article >div ol,
-.wrapper article form p,
-.wrapper article form ul,
-.wrapper article form ol {
-  margin-bottom: 30px;
 }
 .wrapper.search ul.results {
   padding: 0;
@@ -3209,4 +3218,18 @@ nav.visible li.quick.legal a:before {
 .wrapper input[type="email"],
 .wrapper textarea {
   padding: 15px;
+}
+footer {
+  float: left;
+  width: 100%;
+  padding: 15px 90px;
+  background-color: #333;
+  color: #eee;
+  text-align: center;
+}
+footer .logo-bar img {
+  background-color: #fff;
+  padding: 7.5px;
+  margin: 0 7.5px;
+  height: 100px;
 }

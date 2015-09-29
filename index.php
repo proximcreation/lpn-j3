@@ -74,9 +74,9 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 	<body class="site" ng-controller="MainCtrl">
 
 		<header style="background-image : url({{config.banner}})">
-			<div class="logo centered-hv">
+			<a class="logo centered-hv" href="<?php echo $this->baseurl.'/'; ?>">
 				<img ng-src="<?php echo $this->baseurl.'/'; ?>{{config.logo}}" alt=""/>
-			</div>
+			</a>
 		</header>
 		<div class="nav-stuffs">
 			<div
@@ -108,8 +108,9 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 			</div>
 		</div>
 		<footer>
+			<div class="footer-content" ng-include="'<?php echo $tmpl; ?>/html/angular-views/footer.html'"></div>
+         <p class="copyright">&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?></p>
 			<jdoc:include type="modules" name="footer" style="none" />
-			<p>&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?></p>
 		</footer>
 
 		<!-- DATA LOAD -->
@@ -121,6 +122,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 
 		<script type="text/javascript">
 			var tmplPath = '<?php echo $tmpl; ?>';
+         var basePath = '<?php echo $this->baseurl.'/'; ?>';
 		</script>
 		<!-- JS FRAMEWORK LOAD -->
 		<script src="<?php echo $tmpl . '/js/lib/angular.min.js'; ?>"></script>
@@ -134,5 +136,6 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 		<script src="<?php echo $tmpl . '/js/app/controllers.js'; ?>"></script>
 		<script src="<?php echo $tmpl . '/js/app/directives.js'; ?>"></script>
 		<script src="<?php echo $tmpl . '/js/app/filters.js'; ?>"></script>
+      <script src="<?php echo $tmpl . '/js/app/layout.js'; ?>"></script>
 	</body>
 </html>

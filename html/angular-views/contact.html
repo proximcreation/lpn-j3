@@ -2,7 +2,7 @@
 <section>
    <article>
       <h1>Informations</h1>
-      <div>
+      <div class="inner">
          <table>
             <tr>
                <th>Nom</th><td><strong>{{contact.name}}</strong></td>
@@ -17,7 +17,7 @@
          </table>
       </div>
       <h1>{{contact.name}}</h1>
-      <form class="contactbox" action="{{contact.form.action}}" method="post" class="col-12">
+      <form class="contactbox inner" action="{{contact.form.action}}" method="post" class="col-12">
          <fieldset>
 			<legend>Envoyer un e-mail. Tous les champs marqués d'un astérisque * sont obligatoires.</legend>
 			<div class="input-group row">

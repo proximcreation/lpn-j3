@@ -1,7 +1,14 @@
-<h1 class="page-title">À l’affiche</h1>
-<section>
+<h1 class="page-title">{{featured.leadItems.length+featured.introItems.length > 1?'À l’affiche':featured.leadItems[0].title || featured.introItems[0].title}}</h1>
+
+<section ng-if="featured.leadItems.length+featured.introItems.length > 1">
    <article ng-repeat="item in featured.leadItems" ng-include="tmplPath+'/html/angular-views/article-content.html'"></article>
-</section>
+</section ng-if="featured.leadItems.length+featured.introItems.length > 1">
 <section>
    <article ng-repeat="item in featured.introItems" ng-include="tmplPath+'/html/angular-views/article-content.html'"></article>
 </section>
+
+<section ng-if="featured.leadItems.length+featured.introItems.length == 1">
+   <article>
+      <div class="inner" ng-bind-html="featured.leadItems[0].introtext+featured.leadItems[0].fulltext || featured.introItems[0].introtext+featured.introItems[0].fulltext"></div>
+   </article>
+</section
