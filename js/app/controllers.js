@@ -13,6 +13,10 @@ app
 			if(typeof article !== 'undefined'){ $scope.article = article;}
 			if(typeof category !== 'undefined'){ $scope.category = category;}
 			if(typeof featured !== 'undefined'){ $scope.featured = featured;}
+			if(typeof tag !== 'undefined'){
+				$scope.tag = tag;
+				$scope.tagItems = items;
+			}
 			if(typeof contact !== 'undefined'){
 				$scope.contact = contact;
 				$scope.contact.form.formActions = $sce.trustAsHtml($scope.contact.form.formActions);

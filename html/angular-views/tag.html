@@ -1,0 +1,16 @@
+<h1 class="page-title">Articles Tagués</h1>
+<section>
+   <article>
+      <h1>« {{tag[0].title}} » <i class="fa fa-arrow-right"></i> {{tagItems.length}} article{{(tagItems.length>1)?'s':''}}</h1>
+      <div class="inner">
+         <ul class="results">
+            <li ng-if="searchForm.results.length == 0">
+               <h4>Aucun résultat pour ce tag.</h4>
+            </li>
+            <li ng-repeat="item in tagItems">
+               <h4><a ng-href="./{{item.link}}">{{item.core_title}}</a></h4>
+            </li>
+         </ul>
+      </div>
+   </article>
+</section>

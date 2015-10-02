@@ -17,13 +17,16 @@
 .shadow{
 	.box-shadow(2.5px 2.5px 15px 7.5px fadeOut(@dark , 75%));
 }
-@s:15px;
+@s: 15px;
 @b: 75px;
-@h:400px;
+@h: 400px;
+p, ul, ol{
+	line-height: 1.75em;
+}
 
 // === GENERAL ===
 html{
-   font-size: 14pt;
+   font-size: 12pt;
    font-family: @base-font;
    background-color: #eee;
    height: 100%;
@@ -72,6 +75,7 @@ header{
    .shadow;
 	width: @b;
 	height: @b*2;
+	z-index: 1000;
 }
 nav, .searchForm{
    .abs-tl;
@@ -181,7 +185,7 @@ nav.visible{
 }
 
 // === CONTENT ===
-.readmore, .readmore:visited{
+.readmore, .readmore:visited, .tags a, .tags a:visited{
 	background-color: @base-2;
 	color: @bright;
 	padding: @s @s*2;
@@ -190,10 +194,19 @@ nav.visible{
 		background-color: @dark;
 	}
 }
+.tags{
+	border-top: 1px solid @base-2;
+	padding-top: @s;
+	a, a:visited{
+		padding: @s/2 @s;
+		margin: 0 @s/2 @s/2 0;
+		display: inline-block;
+	}
+}
 .content-wrapper{
 	// .row;
 	width: 100%;
-	max-width: 1400px;
+	max-width: 1100px;
 	margin: 0 auto;
 	padding: @s @b+@s;
 }
@@ -203,6 +216,23 @@ nav.visible{
 		text-align: justify;
 		p, ul, ol{
 			margin-bottom: @s*2;
+		}
+	}
+	.img-row{
+		max-height : 400px;
+		overflow: hidden;
+		.mask{
+			height: 380px;
+			width: 100/3%;
+			float: left;
+			overflow: hidden;
+			.relative;
+			img{
+				padding: 0 5px;
+				.centered-hv;
+				width: 100%;
+				height: auto;
+			}
 		}
 	}
    h1.page-title{

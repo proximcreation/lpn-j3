@@ -8,7 +8,8 @@
 </section>
 
 <section ng-if="featured.leadItems.length+featured.introItems.length == 1">
-   <article>
-      <div class="inner" ng-bind-html="featured.leadItems[0].introtext+featured.leadItems[0].fulltext || featured.introItems[0].introtext+featured.introItems[0].fulltext"></div>
+   <article ng-repeat="item in featured.leadItems.concat(featured.introItems)">
+      <div class="inner" ng-bind-html="item.introtext+item.fulltext"></div>
+      <div class="tags" ng-include="tmplPath+'/html/angular-views/article-tags.html'" ng-if="item.tags.itemTags.length>0"></div>
    </article>
 </section

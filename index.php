@@ -100,6 +100,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 				<div class="wrapper featured" ng-if="featured!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/featured.html'"></div>
 				<div class="wrapper category" ng-if="category!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/category.html'"></div>
 				<div class="wrapper article" ng-if="article!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/article.html'"></div>
+            <div class="wrapper search" ng-if="tag!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/tag.html'"></div>
 				<div class="wrapper search" ng-if="searchForm.results!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/search.html'"></div>
 				<div class="wrapper contact" ng-if="contact!==undefined" ng-include="'<?php echo $tmpl; ?>/html/angular-views/contact.html'"></div>
 			</main>
@@ -125,9 +126,9 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
          var basePath = '<?php echo $this->baseurl.'/'; ?>';
 		</script>
 		<!-- JS FRAMEWORK LOAD -->
+		<script src="<?php echo $tmpl . '/js/lib/jquery.min.js'; ?>"></script>
 		<script src="<?php echo $tmpl . '/js/lib/angular.min.js'; ?>"></script>
 		<script src="<?php echo $tmpl . '/js/lib/angular-sanitize.min.js'; ?>"></script>
-		<script src="<?php echo $tmpl . '/js/lib/jquery.min.js'; ?>"></script>
 		<script src="<?php echo $tmpl . '/js/lib/lodash.compat.min.js'; ?>"></script>
 		<script src="<?php echo $tmpl . '/js/lib/lpn-utils.js'; ?>"></script>
 		<script src="<?php echo $tmpl . '/js/lib/moment-with-locales.min.js'; ?>"></script>
