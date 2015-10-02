@@ -78,11 +78,15 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 				<img ng-src="<?php echo $this->baseurl.'/'; ?>{{config.logo}}" alt=""/>
 			</a>
 		</header>
-		<div class="nav-stuffs">
+		<div class="nav-stuffs" ng-class="{'r3':pdfLink}">
 			<div
 				class="searchForm"
 				ng-class="{'visible':searchForm.visible}"
 				ng-include="'<?php echo $tmpl; ?>/html/angular-views/search-form.html'"></div>
+         <div
+				class="pdflink"
+				ng-if="pdfLink"
+				ng-include="'<?php echo $tmpl; ?>/html/angular-views/pdflink.html'"></div>
 			<nav
 				ng-class="{'visible':menu.visible}"
 				ng-if="menu!==undefined"

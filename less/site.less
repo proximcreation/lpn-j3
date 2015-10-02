@@ -76,8 +76,11 @@ header{
 	width: @b;
 	height: @b*2;
 	z-index: 1000;
+	&.r3{
+		height: @b*3;
+	}
 }
-nav, .searchForm{
+nav, .searchForm, .pdflink{
    .abs-tl;
    background-color: @bright;
 	z-index: 20;
@@ -110,9 +113,14 @@ nav, .searchForm{
                padding-left: @s*2;
             }
          }
+			> li > a, > li > a:hover{
+				font-weight: bold;
+				font-size: 1.1rem;
+				background-color: fadeOut(@base-1, 75%);
+			}
       }
    }
-   .menu-toggler, .search-toggler{
+   .menu-toggler, .search-toggler, .pdflink-btn{
       width: @b;
       height: @b;
       display: block;
@@ -129,10 +137,15 @@ nav.visible{
 			display: block;
 			width: @b;
 			height: @b;
+			border: none;
 			&:before{
 				font-size: 2rem;
 				.fa;
 				.centered-hv;
+			}
+			&:hover{
+				background-color: @base-1;
+				color: darken(@base-2, 20%);
 			}
 		}
 		&.top{
@@ -182,6 +195,9 @@ nav.visible{
 	      }
 		}
 	}
+}
+.pdflink{
+	top: @b*2;
 }
 
 // === CONTENT ===

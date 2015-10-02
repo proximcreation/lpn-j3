@@ -10,7 +10,10 @@ app
 			$scope.tmplPath = tmplPath;
 			$scope.basePath = basePath;
 			if(typeof json_config !== 'undefined'){ $scope.config = json_config;}
-			if(typeof article !== 'undefined'){ $scope.article = article;}
+			if(typeof article !== 'undefined'){
+				$scope.article = article;
+				$scope.pdfLink = pdfLink;
+			}
 			if(typeof category !== 'undefined'){ $scope.category = category;}
 			if(typeof featured !== 'undefined'){ $scope.featured = featured;}
 			if(typeof tag !== 'undefined'){

@@ -2983,8 +2983,12 @@ header .logo img {
   height: 150px;
   z-index: 1000;
 }
+.nav-stuffs.r3 {
+  height: 225px;
+}
 nav,
-.searchForm {
+.searchForm,
+.pdflink {
   position: absolute;
   top: 0;
   left: 0;
@@ -2995,7 +2999,8 @@ nav,
   font-size: .9rem;
 }
 nav.visible,
-.searchForm.visible {
+.searchForm.visible,
+.pdflink.visible {
   position: fixed;
   top: 0;
   left: 0;
@@ -3009,18 +3014,22 @@ nav.visible,
   height: 100%;
 }
 nav.visible .menu-toggler,
-.searchForm.visible .menu-toggler {
+.searchForm.visible .menu-toggler,
+.pdflink.visible .menu-toggler {
   float: right;
 }
 nav.visible > ul,
-.searchForm.visible > ul {
+.searchForm.visible > ul,
+.pdflink.visible > ul {
   margin: 75px 0;
   border-bottom: 1px solid #d47639;
 }
 nav.visible > ul li a,
 nav.visible > ul li a:visited,
 .searchForm.visible > ul li a,
-.searchForm.visible > ul li a:visited {
+.searchForm.visible > ul li a:visited,
+.pdflink.visible > ul li a,
+.pdflink.visible > ul li a:visited {
   color: #b35e27;
   padding: 7.5px 15px;
   display: block;
@@ -3029,18 +3038,36 @@ nav.visible > ul li a:visited,
 nav.visible > ul li a:hover,
 nav.visible > ul li a:visited:hover,
 .searchForm.visible > ul li a:hover,
-.searchForm.visible > ul li a:visited:hover {
+.searchForm.visible > ul li a:visited:hover,
+.pdflink.visible > ul li a:hover,
+.pdflink.visible > ul li a:visited:hover {
   background-color: #e6b08d;
   color: #89481e;
 }
 nav.visible > ul li ul a,
-.searchForm.visible > ul li ul a {
+.searchForm.visible > ul li ul a,
+.pdflink.visible > ul li ul a {
   padding-left: 30px;
+}
+nav.visible > ul > li > a,
+nav.visible > ul > li > a:hover,
+.searchForm.visible > ul > li > a,
+.searchForm.visible > ul > li > a:hover,
+.pdflink.visible > ul > li > a,
+.pdflink.visible > ul > li > a:hover {
+  font-weight: bold;
+  font-size: 1.1rem;
+  background-color: rgba(230,176,141,0.25);
 }
 nav .menu-toggler,
 nav .search-toggler,
+nav .pdflink-btn,
 .searchForm .menu-toggler,
-.searchForm .search-toggler {
+.searchForm .search-toggler,
+.searchForm .pdflink-btn,
+.pdflink .menu-toggler,
+.pdflink .search-toggler,
+.pdflink .pdflink-btn {
   width: 75px;
   height: 75px;
   display: block;
@@ -3048,8 +3075,13 @@ nav .search-toggler,
 }
 nav .menu-toggler:hover,
 nav .search-toggler:hover,
+nav .pdflink-btn:hover,
 .searchForm .menu-toggler:hover,
-.searchForm .search-toggler:hover {
+.searchForm .search-toggler:hover,
+.searchForm .pdflink-btn:hover,
+.pdflink .menu-toggler:hover,
+.pdflink .search-toggler:hover,
+.pdflink .pdflink-btn:hover {
   background-color: #e6b08d;
 }
 nav.visible li.quick a {
@@ -3057,6 +3089,7 @@ nav.visible li.quick a {
   display: block;
   width: 75px;
   height: 75px;
+  border: none;
 }
 nav.visible li.quick a:before {
   font-size: 2rem;
@@ -3072,6 +3105,10 @@ nav.visible li.quick a:before {
   -ms-transform: translate(-50%,-50%);
   -webkit-transform: translate(-50%,-50%);
   transform: translate(-50%,-50%);
+}
+nav.visible li.quick a:hover {
+  background-color: #e6b08d;
+  color: #89481e;
 }
 nav.visible li.quick.top {
   position: fixed;
@@ -3141,6 +3178,9 @@ nav.visible li.quick.legal a:before {
 }
 .searchForm.visible .search-toggler:hover {
   background-color: #e6b08d;
+}
+.pdflink {
+  top: 150px;
 }
 .readmore,
 .readmore:visited,
