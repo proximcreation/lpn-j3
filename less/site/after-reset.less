@@ -378,16 +378,11 @@ input{
 	display: inline-block;
 	background: none no-repeat right @select-bg-color;
 	min-width: @select-min-width;
-	span.arrow{
-		background-color: @select-bg-color;
-		color: @select-txt-color;
-		position: absolute;
-		z-index: 5;
-		right: 0;
+	&:after{
+		.fa;
+		content: @fa-var-arrow-down;
 		padding: 0 0.5em;
-		&:after{
-			content: @select-arrow-content;
-		}
+		color: @select-txt-color;
 	}
 	select{
 		.form-item;

@@ -1,6 +1,60 @@
 <h1 class="page-title">Résultats de la recherche</h1>
 <section>
    <article>
+      <h1>Affiner la recherche</h1>
+      <div class="inner">
+         <form action="{{searchForm.action}}" method="post">
+            <div class="input-group row">
+   				<label class="col-3" for="search-searchword" title="Nom">Recherche</label>
+   				<input class="col-9" type="text" name="searchword" id="search-searchword" value="{{searchForm.origKeyword}}" />
+   			</div>
+
+            <fieldset class="phrases">
+               <div class="row">
+                  <label class=col-3>Mode de recherche :</label>
+                  <div class="col-9">
+                     <div class="input-group col-4">
+         	            <input type="radio" name="searchphrase" id="searchphraseall" value="all"  checked="checked"  >
+            	         <label for="searchphraseall" id="searchphraseall-lbl" class="radio">Tous les mots</label>
+                     </div>
+                     <div class="input-group col-4">
+                        <input type="radio" name="searchphrase" id="searchphraseany" value="any"  >
+            	         <label for="searchphraseany" id="searchphraseany-lbl" class="radio">N'importe quel mot</label>
+                     </div>
+                     <div class="input-group col-4">
+                        <input type="radio" name="searchphrase" id="searchphraseexact" value="exact"  >
+            	         <label for="searchphraseexact" id="searchphraseexact-lbl" class="radio">Phrase exacte</label>
+                     </div>
+                  </div>
+               </div>
+               <div class="row">
+                  <label class=col-3>Classement :</label>
+                  <div class="select">
+                     <select id="ordering" name="ordering" class="inputbox">
+                     	<option value="newest" selected="selected">Le plus r&eacute;cent en premier</option>
+                     	<option value="oldest">Le plus ancien en premier</option>
+                     	<option value="popular">Les plus populaires</option>
+                     	<option value="alpha">Alphab&eacute;tique</option>
+                     	<option value="category">Cat&eacute;gorie</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="row">
+                  <label class=col-3>Cibler la recherche :</label>
+                  <div class="col-9">
+                     <div class="input-group col-4" ng-repeat="(val, txt) in searchForm.searchAreas">
+                        <input type="checkbox" name="areas[]" value="{{val}}" id="area-{{val}}" >
+                        <label for="area-{{val}}" class="checkbox">{{txt}}</label>
+                     </div>
+                  </div>
+               </div>
+            </fieldset>
+            <hr />
+            <div class="input-group row">
+   				<button class="col-ol-3 col-3" onclick="this.form.submit()"><i class="icon fa fa-search"></i> Relancer</button>
+   			</div>
+         </form>
+      </div>
       <h1>« {{searchForm.origKeyword}} » <i class="fa fa-arrow-right"></i> {{searchForm.total}} resultat{{(searchForm.total>1)?'s':''}}</h1>
       <div class="inner">
          <ul class="results">

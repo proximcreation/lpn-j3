@@ -24,7 +24,11 @@ $results = json_encode($this->results);
 if ($this->error) {
    $errors =  json_encode($this->escape($this->errors));
 }
-// $pagination = getJsonData($this->pagination);
+// $searchareas = getJsonData($this->searchareas);
+$tmp = [];
+foreach ($this->searchareas['search'] as $val => $txt){
+   $tmp[$val] = JText::_($txt);
+}
 ?>
 
 <script type="text/javascript">
@@ -34,4 +38,5 @@ if ($this->error) {
    <?php }?>
    searchForm.origKeyword = '<?php echo $this->escape($this->origkeyword); ?>';
 	searchForm.total = <?php echo $this->escape($this->total); ?>;
+   searchForm.searchAreas = <?php echo json_encode($tmp); ?>;
 </script>
