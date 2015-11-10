@@ -1,11 +1,28 @@
-<h1 ng-if="article === undefined"><a ng-href="index.php?option=com_content&view=article&id={{item.id}}">{{item.title}}</a></h1>
+<h1 ng-if="article === undefined && item.title!== 'Photos'">
+   <a ng-href="index.php?option=com_content&view=article&id={{item.id}}">{{item.title}}</a>
+</h1>
 
-<div class="inner" img-row>
-   <div ng-if="article === undefined" ng-bind-html="item.introtext"></div>
+<div class="inner" img-row ng-if="item.title !=='Photos'">
+   <div ng-if="article === undefined" ng-bind-html="trustIt(item.introtext)"></div>
    <p><a class="readmore" href="" ng-click="item.full = !item.full" ng-show="article === undefined && item.fulltext!=''">{{!item.full?'Lire la suite...':'Réduire'}}</a></p>
-   <div ng-bind-html="item.fulltext" ng-show="item.full && article === undefined"></div>
+   <div ng-bind-html="trustIt(item.fulltext)" ng-show="item.full && article === undefined"></div>
 
-   <div ng-if="article !== undefined" ng-bind-html="item.introtext+item.fulltext"></div>
+   <div ng-if="article !== undefined" ng-bind-html="trustIt(item.introtext+item.fulltext)"></div>
 
    <div class="tags" ng-include="tmplPath+'/html/angular-views/article-tags.html'" ng-if="item.tags.itemTags.length>0"></div>
 </div>
+<div
+   class="gallery-wrapper"
+   style="height:{{!states.galleryDwn?'180px':'auto'}}; overflow:hidden"
+   ng-if="item.title ==='Photos'"
+>
+   <div
+      ng-bind-html="trustIt(item.introtext+item.fulltext)"
+      style="width:{{!states.galleryDwn?'200%':'auto'}};"
+
+      ></div>
+</div>
+<a class="readmore pull-right" href="" ng-click="states.galleryDwn=!states.galleryDwn" ng-if="item.title ==='Photos'">
+   <i class="fa fa-lg" ng-class="{'fa-eye':!states.galleryDwn , 'fa-eye-slash':states.galleryDwn}"></i>
+   &nbsp;{{states.galleryDwn?'masquer':'plus d’image'}}
+</a>

@@ -3275,6 +3275,29 @@ nav.visible li.quick.legal a:before {
   padding: 7.5px 30px;
   margin: 30px 0;
 }
+.wrapper article.gallery {
+  background-color: transparent;
+}
+.wrapper article.gallery p {
+  display: none;
+}
+.wrapper article.gallery .sigProClassic {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.wrapper article.gallery .sigProThumb {
+  margin: 0;
+  background-color: transparent !important;
+}
+.wrapper article.gallery .sigProThumb .sigProLinkOuterWrapper {
+  background: none;
+  padding: 0;
+}
+.wrapper article.gallery .sigProThumb .sigProLinkOuterWrapper .sigProLinkWrapper {
+  margin: 0;
+  border: none;
+  padding: 7.5px;
+}
 .wrapper.search ul.results {
   padding: 0;
   list-style-type: none;

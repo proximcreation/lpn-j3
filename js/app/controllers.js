@@ -9,6 +9,7 @@ app
 			// DATA LOAD
 			$scope.tmplPath = tmplPath;
 			$scope.basePath = basePath;
+			$scope.states = {};
 			if(typeof json_config !== 'undefined'){ $scope.config = json_config;}
 			if(typeof article !== 'undefined'){
 				$scope.article = article;
@@ -58,6 +59,9 @@ app
 				}
 			}
 
+			$scope.trustIt = function(html){
+				return $sce.trustAsHtml(html);
+			}
 			console.log('loaded!!');
 
 		};

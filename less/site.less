@@ -279,6 +279,29 @@ nav.visible{
 	      padding: @s/2 @s*2;
 			margin: @s*2 0;
 		}
+		&.gallery{
+			background-color: transparent;
+			p{
+				display: none;
+			}
+			.sigProClassic{
+				margin: 0!important;
+				padding: 0!important;
+			}
+			.sigProThumb{
+				margin: 0;
+				background-color: transparent!important;
+				.sigProLinkOuterWrapper{
+					background: none;
+					padding: 0;
+					.sigProLinkWrapper{
+						margin: 0;
+						border: none;
+						padding: @s/2;
+					}
+				}
+			}
+		}
    }
 	&.search{
 		ul.results{

@@ -44,7 +44,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
 		<meta http-equiv="Content-Language" content="fr-FR" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-
+      <script src="<?php echo $tmpl . '/js/lib/jquery.min.js'; ?>"></script>
 		<jdoc:include type="head" />
 
 		<!-- FAVICON TODO -->
@@ -130,7 +130,7 @@ $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/sit
          var basePath = '<?php echo $this->baseurl.'/'; ?>';
 		</script>
 		<!-- JS FRAMEWORK LOAD -->
-		<script src="<?php echo $tmpl . '/js/lib/jquery.min.js'; ?>"></script>
+
 		<script src="<?php echo $tmpl . '/js/lib/angular.min.js'; ?>"></script>
 		<script src="<?php echo $tmpl . '/js/lib/angular-sanitize.min.js'; ?>"></script>
 		<script src="<?php echo $tmpl . '/js/lib/lodash.compat.min.js'; ?>"></script>

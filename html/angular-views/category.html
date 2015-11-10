@@ -1,7 +1,7 @@
 <h1 class="page-title">{{category.infos.title}}</h1>
 <section>
-   <article ng-repeat="item in category.leadItems" ng-include="tmplPath+'/html/angular-views/article-content.html'"></article>
+   <article ng-class="{'gallery':item.title==='Photos'}" ng-repeat="item in category.leadItems" ng-include="tmplPath+'/html/angular-views/article-content.html'"></article>
 </section>
 <section>
-   <article ng-repeat="item in category.introItems" ng-include="tmplPath+'/html/angular-views/article-content.html'"></article>
+   <article ng-class="{'gallery':item.title==='Photos'}" ng-repeat="item in category.introItems" ng-include="tmplPath+'/html/angular-views/article-content.html'"></article>
 </section>
